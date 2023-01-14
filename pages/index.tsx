@@ -79,11 +79,10 @@ export default function Home() {
         <Box sx={{ m: 5 }}>
           <Typography variant='h2' sx={{ p: 2 }} title id='info'>Dernières informations</Typography>
           <Stack spacing={2}>
-            {new Array(5).fill(0).map((_, i) => isLoading || !(data && data[i]) || false ? (
+            {new Array(5).fill(0).map((_, i) => isLoading && (
               <Skeleton variant="rectangular" width={'100%'} key={i}><New title={''} desc={''} id={''} /></Skeleton>
-            ) : (
-              <New title={data[i].title} desc={data[i].desc + '...'} id={data[i].id} />
             ))}
+            {data && data.map(d => <New title={d.title} desc={d.desc + '...'} id={d.id} />)}
           </Stack>
         </Box>
       </Layout>
