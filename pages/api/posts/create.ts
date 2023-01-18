@@ -4,17 +4,20 @@ import { getPostData } from '../../../lib/posts';
 import * as fs from "fs"
 import { unstable_getServerSession } from "next-auth/next"
 import { authOptions } from "../auth/[...nextauth]"
+import { getSession } from 'next-auth/react';
 
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
 ) {
     try {
+        const session = await getSession({ req })
+
         console.log('get')
         if (req.method !== 'POST') return res.status(405).json({ id: 'bad method', error: 'Please use post method' });
-        const session = await unstable_getServerSession(req, res, authOptions)
-
-        if(!session) return res.status(403).json({ id: 'unallowed', error: 'Please use post method' });    
+        
+        //@ts-ignore
+        if(!session || session.user?.role !== "admin") return res.status(403).json({ id: 'unallowed', error: 'Please use post method' });    
         console.log(req.body);
 
         

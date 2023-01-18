@@ -1,7 +1,7 @@
-import { Box, Divider, Stack, Typography } from "@mui/material";
+import { Box, Divider, Link, Stack, Typography } from "@mui/material";
 //import Typography from "./typograhy";
 import InstagramIcon from '@mui/icons-material/Instagram';
-import Link from "next/link";
+
 
 
 export default function Footer() {
@@ -11,11 +11,11 @@ export default function Footer() {
                 <InstagramIcon fontSize="large" color="primary" />
             </Link>
             <Typography>Maison Des Lycéens de Jules Verne</Typography>
-            <Typography sx={{}}><Link href={'mailto:mdljulesvernes@gmail.com'}>mdljulesvernes@gmail.com</Link></Typography>
+            <Link href={'mailto:mdljulesvernes@gmail.com'} color="inherit">mdljulesvernes@gmail.com</Link>
             <Stack direction="row" spacing={2} sx={{px: 'auto', alignItems: 'center', justifyContent: 'center'}} divider={<Divider orientation="vertical" flexItem />}>
-                <Typography><Link href={'/'}>Accueil</Link></Typography>
-                <Typography><Link href={'/mentions'}>Mentions Légales</Link></Typography>
-                <Typography><Link href={'/posts'}>Articles</Link></Typography>
+                <Link href="/" color="inherit">Accueil</Link >
+                <Link href="/mentions" color="inherit">Mentions Légales</Link >
+                <Link href="/posts" color="inherit">Articles</Link >
             </Stack>
         </Box>
     )

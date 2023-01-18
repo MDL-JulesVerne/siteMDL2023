@@ -40,10 +40,10 @@ export default function Home() {
     //console.log("hey")
   }
 
-  const { data: session } = useSession();
-
-  if (session) {
-    console.log(session)
+  const { data: session, status } = useSession()
+  console.log(session)
+  //@ts-ignore
+  if (session && session.user.role == "admin") {
     return (
       <Layout>
         Signed in as {session.user?.name} <br />
