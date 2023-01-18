@@ -71,7 +71,7 @@ export default function Post({
             {new Array(5).fill(0).map((_, i) => isLoading && (
               <Skeleton variant="rectangular" width={'100%'} key={i}><New title={''} desc={''} id={''} /></Skeleton>
             ))}
-            {data && data.map(d => <New title={d.title} desc={d.desc + '...'} id={d.id} />)}
+            {data && data.map((d, i) => <New title={d.title} desc={d.desc + '...'} id={d.id} key={i}/>)}
           </Stack>
       </Box>
 

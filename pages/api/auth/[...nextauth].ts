@@ -2,7 +2,7 @@ import NextAuth, { User } from "next-auth"
 import InstagramProvider from "next-auth/providers/instagram"
 import CredentialsProvider from "next-auth/providers/credentials"
 import clientPromise from "../../../lib/mongodb"
-import { MongoDBAdapter } from "../../../lib/mongoAdapter"
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import EmailProvider from 'next-auth/providers/email';
 import nodemailer from 'nodemailer';
 
