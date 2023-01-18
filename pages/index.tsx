@@ -41,8 +41,7 @@ export default function Home() {
         <Box sx={{ m: 5 }}>
           <Typography variant='h2' sx={{ p: 2 }} title id='kesaco'>La MDL c&apos;est quoi ?</Typography>
           <Grid container spacing={2}>
-            <Grid item xs={4}>
-
+            <Grid item xs={12} md={4}>
               <Card sx={{ minWidth: 275, backgroundColor: '#caf990', ':hover': { boxShadow: 5 } }}>
                 <CardContent>
                   <Typography variant='h3' >Un lieu :</Typography>
@@ -53,7 +52,7 @@ export default function Home() {
               </Card>
 
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} md={4}>
               <Card sx={{ minWidth: 275, backgroundColor: '#90caf9', ':hover': { boxShadow: 5 } }}>
                 <CardContent>
                   <Typography variant='h3' >Une équipe :</Typography>
@@ -63,7 +62,7 @@ export default function Home() {
                 </CardActions>
               </Card>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={12} md={4}>
               <Card sx={{ minWidth: 275, backgroundColor: '#F990CA', ':hover': { boxShadow: 5 } }}>
                 <CardContent>
                   <Typography variant='h3' >Des projets :</Typography>
