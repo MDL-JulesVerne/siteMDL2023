@@ -1,9 +1,9 @@
-import { AppBar, Container, Toolbar, Typography, Box, IconButton, Menu, MenuItem, Button, Tooltip, Avatar } from "@mui/material";
+import { AppBar, Container, Toolbar, Typography, Box, IconButton, Menu, MenuItem, Button, Tooltip, Avatar, Link } from "@mui/material";
 import React from "react";
 import BungalowIcon from '@mui/icons-material/Bungalow';
 import MenuIcon from '@mui/icons-material/Menu';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import Link from "next/link";
+//import Link from "next/link";
 
 export default function Navbar() {
     const pages = ['Articles'];
@@ -81,7 +81,7 @@ export default function Navbar() {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <Link href="/posts" textAlign="center">{page}</Link>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -111,6 +111,7 @@ export default function Navbar() {
                                 key={page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
+                                href="/posts"
                             >
                                 {page}
                             </Button>

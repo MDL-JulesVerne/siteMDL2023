@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { New } from '../../components/new'
+import Date from '../../components/date'
 
 export default function Post({
   postData, nextPosts
@@ -46,11 +47,12 @@ export default function Post({
             <Typography variant='h2' title>{postData.title}</Typography>
           </Box>
           <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          <Box  sx={{m: 1 }}><Typography variant='body2'>posté le <Date dateString={postData.date} /></Typography></Box>
         </Box>
       </article>
 
       <Paper sx={{ p: 2, m: 2, backgroundColor: '#caf990' }}>
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex'}}>
 
           <Box sx={{ display: 'inline-block', verticalAlign: 'middle', p: 1 }}>
             <Avatar {...stringAvatar(postData.author)} src={"/authors/" + postData.author.toLocaleLowerCase().split(' ').join('_')} />
@@ -61,17 +63,16 @@ export default function Post({
             </Typography>
           </Box>
         </Box>
-        <Typography>{postData.date}</Typography>
+        
       </Paper>
       <Box sx={{ p: 5 }}>
         <Typography title variant="h4">Suggestions</Typography>
         <Stack spacing={2}>
-          {new Array(5).fill(0).map((_, i) => isLoading || !(data && data[i]) || false ? (
-            <Skeleton variant="rectangular" width={'100%'} key={i}><New title={''} desc={''} id={''} /></Skeleton>
-          ) : (
-            <New title={data[i].title} desc={data[i].desc + '...'} id={data[i].id} />
-          ))}
-        </Stack>
+            {new Array(5).fill(0).map((_, i) => isLoading && (
+              <Skeleton variant="rectangular" width={'100%'} key={i}><New title={''} desc={''} id={''} /></Skeleton>
+            ))}
+            {data && data.map(d => <New title={d.title} desc={d.desc + '...'} id={d.id} />)}
+          </Stack>
       </Box>
 
     </Layout >
