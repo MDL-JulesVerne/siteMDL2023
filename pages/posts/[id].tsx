@@ -51,7 +51,7 @@ export default function Post({
         </Box>
       </article>
 
-      <Paper sx={{ p: 2, m: 2, backgroundColor: '#caf990' }}>
+      <Paper sx={{ p: 2, m: 2, backgroundColor: '#ffca28' }}>
         <Box sx={{ display: 'flex'}}>
 
           <Box sx={{ display: 'inline-block', verticalAlign: 'middle', p: 1 }}>

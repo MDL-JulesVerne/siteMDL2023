@@ -28,7 +28,7 @@ export default function Navbar() {
     };
 
     return (
-        <AppBar position="static" color="secondary">
+        <AppBar position="static" color="primary">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <BungalowIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />

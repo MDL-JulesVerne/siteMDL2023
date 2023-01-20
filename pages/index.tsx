@@ -42,10 +42,10 @@ export default function Home() {
           <Typography variant='h2' sx={{ p: 2 }} title id='kesaco'>La MDL c&apos;est quoi ?</Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
-              <Card sx={{ minWidth: 275, backgroundColor: '#caf990', ':hover': { boxShadow: 5 } }}>
+              <Card sx={{ minWidth: 275, backgroundColor: '#9ccc65', ':hover': { boxShadow: 5 } }}>
                 <CardContent>
                   <Typography variant='h3' >Un lieu :</Typography>
-                  <Typography variant='body1'>La MDL est basée dans une salle de taille moyenne au rez-de-chaussée dans l&apos;enceinte du lycée. Cette salle confortablement aménagée est un lieu tranquille pour les lycéens, ils peuvent y travailler, se reposer ou jouer.</Typography>
+                  <Typography variant='body1'>La MDL est située dans une salle de taille moyenne au rez-de-chaussée dans l&apos;enceinte du lycée. Cette salle confortablement aménagée est un lieu tranquille pour les lycéens, ils peuvent y travailler, se reposer ou jouer.</Typography>
                 </CardContent>
                 <CardActions>
                 </CardActions>
@@ -53,20 +53,20 @@ export default function Home() {
 
             </Grid>
             <Grid item xs={12} md={4}>
-              <Card sx={{ minWidth: 275, backgroundColor: '#90caf9', ':hover': { boxShadow: 5 } }}>
+              <Card sx={{ minWidth: 275, backgroundColor: '#ffca28', ':hover': { boxShadow: 5 } }}>
                 <CardContent>
                   <Typography variant='h3' >Une équipe :</Typography>
-                  <Typography variant='body1'>La Maison Des Lycéen de Jules Verne est une association à part entière. Ainsi, la MDL possède un bureau composé d&apos;un ou d&apos;une présidente, d&apos;un ou d&apos;une trésorière et de secrétaires. Chacun de ces rôles est accompagné d&apos;adjoint pouvant prendre la relève les années suivantes. Tous digne de confiance, car ils sont élus en début d&apos;année par les élèves. La MDL est donc totalement autonome, composé par et pour les élèves (sous la surveillance discrète et bienveillante du CPE)</Typography>
+                  <Typography variant='body1'>La Maison Des Lycéen de Jules Verne est une association à part entière. Ainsi, la MDL possède un bureau composé d&apos;un ou d&apos;une présidente, d&apos;un ou d&apos;une trésorière et de secrétaires. Chacun de ces rôles est accompagné d&apos;adjoint pouvant prendre la relève les années suivantes. Tous digne de confiance, car ils sont élus en début d&apos;année par les élèves. La MDL est donc totalement autonome, composée par et pour les élèves (sous la surveillance discrète et bienveillante du CPE).</Typography>
                 </CardContent>
                 <CardActions>
                 </CardActions>
               </Card>
             </Grid>
             <Grid item xs={12} md={4}>
-              <Card sx={{ minWidth: 275, backgroundColor: '#F990CA', ':hover': { boxShadow: 5 } }}>
+              <Card sx={{ minWidth: 275, backgroundColor: '#26a69a', ':hover': { boxShadow: 5 } }}>
                 <CardContent>
                   <Typography variant='h3' >Des projets :</Typography>
-                  <Typography variant='body1'>La MDL organise tous les ans différents projet pour les lycéens. Les membres de la MDL organisent eux-mêmes les projets, de leur conception à leur dénouement en passant par la planification. Pour cela, ils ont à disposition le budget de la MDL pour diverse fourniture, réservation ou autres et peuvent utiliser les locaux du lycée au besoin de même (avec évidement l&apos;autorisation du chef d&apos;établissement). Ainsi, il y a, eu et aura l&apos;annuel bal de promo réservé aux terminals, père noël secret pour les secondes ou journée sans cartable tout le monde entre autres.</Typography>
+                  <Typography variant='body1'>La MDL organise tous les ans différents projets pour les lycéens. Les membres de la MDL organisent eux-mêmes les projets, de leur conception à leur dénouement en passant par la planification. Pour cela, ils ont à disposition le budget de la MDL pour diverses fournitures, réservations ou autres et peuvent utiliser les locaux du lycée au besoin (avec évidement l&apos;autorisation du chef d&apos;établissement). Comme par exemple, le bal de promo annuel réservé aux terminals ou le père Noël secret.</Typography>
                 </CardContent>
                 <CardActions>
                 </CardActions>

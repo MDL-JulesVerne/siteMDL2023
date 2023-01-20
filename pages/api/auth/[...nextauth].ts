@@ -5,6 +5,7 @@ import clientPromise from "../../../lib/mongodb"
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter"
 import EmailProvider from 'next-auth/providers/email';
 import nodemailer from 'nodemailer';
+import { toUpper } from "../../../lib/utils"
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -25,6 +26,8 @@ export const authOptions = {
   callbacks: {
     async session({ session, token, user }: any) {
       session.user.role = user.role; // Add role value to user object so it is passed along with session
+      session.user.name = toUpper(user.email.split('@')[0].split('.').join(' '))
+      //console.log(session)
       return session;
     }
   },

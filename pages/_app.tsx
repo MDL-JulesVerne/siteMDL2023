@@ -6,14 +6,14 @@ import { SessionProvider } from "next-auth/react"
 let theme = createTheme({
   palette: {
     primary: {
-      main: '#eeeeee',
+      main: '#b0bec5',
     },
     secondary: {
-      main: '#90caf9',
+      main: '#546e7a',
     },
     background: {
       paper: '#9e9e9e',
-      default: '#eeeeee',
+      default: '#fafafa',
     }
   }
 });
