@@ -76,7 +76,7 @@ export default function Home() {
   }else if(session){
     return (
       <Layout>
-        Vous n'avez pas la permission<br />
+        Vous n&apos;avez pas la permission<br />
         <button onClick={() => signOut()}>Sign out</button>
       </Layout>
     )
