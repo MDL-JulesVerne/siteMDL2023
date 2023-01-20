@@ -1,13 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+
 import Layout from '../../components/layout'
 import { Avatar, Box, Button, Card, CardActions, CardContent, Container, Divider, Grid, Paper, Stack, TextField, Typography } from '@mui/material'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { stringAvatar } from '../../lib/utils'
 import { useState, useEffect } from 'react'
-import { isConstructorDeclaration } from 'typescript'
 
 export default function Home() {
 
@@ -75,6 +71,13 @@ export default function Home() {
           </Box>
         </article>
 
+      </Layout>
+    )
+  }else if(session){
+    return (
+      <Layout>
+        Vous n'avez pas la permission<br />
+        <button onClick={() => signOut()}>Sign out</button>
       </Layout>
     )
   }

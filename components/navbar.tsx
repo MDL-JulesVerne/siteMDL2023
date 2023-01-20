@@ -91,7 +91,7 @@ export default function Navbar() {
                         variant="h5"
                         noWrap
                         component="a"
-                        href=""
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -103,7 +103,7 @@ export default function Navbar() {
                             textDecoration: 'none',
                         }}
                     >
-                        Maison Des Lycéens
+                        MDL
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
