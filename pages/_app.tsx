@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { createTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from '@mui/material'
 import { SessionProvider } from "next-auth/react"
+import { Analytics } from '@mui/icons-material';
 
 let theme = createTheme({
   palette: {
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps: { session, ...pageProps }, }
           <Component {...pageProps} />
         </SessionProvider>
       </ThemeProvider>
+      <Analytics />
     </>
   )
 }
