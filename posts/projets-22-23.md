@@ -36,6 +36,11 @@ Roses pour la saint Valentin :
     Prévu pour le 9 février
     Concept : les lycéens achètent des roses qui seront distribuées anonymement (ou pas si souhaité) par les responsables du projet
 
+
+Tournoi de football inter lycée:
+    Responsables projet : Sasha, membres MDL exterieurs au lycée Jules Verne
+    Prévu pour mai
+
     
 ## Projets déjà faits les années précédentes :
 
