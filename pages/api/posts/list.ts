@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import addView from '../../../lib/analytics';
 import { getAllPostIds, getPostData, getSortedPostsData } from '../../../lib/posts';
 
 
@@ -16,6 +17,9 @@ export default async function handler(
     const data = await getSortedPostsData()
     if (!data) return res.status(400).json({id: 'not found', error: 'The post id don\' exist' });
     res.status(200).json(data)
+
+    addView()
+    
   } catch (e) {
     console.log(e);
     res.status(500).json({ error: 'A error occured' });
