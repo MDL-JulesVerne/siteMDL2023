@@ -1,4 +1,4 @@
-import { AppBar, Container, Toolbar, Typography, Box, IconButton, Menu, MenuItem, Button, Tooltip, Avatar, Link } from "@mui/material";
+import { AppBar, Container, Toolbar, Typography, Box, IconButton, Menu, MenuItem, Button, Tooltip, Avatar, Link, SwipeableDrawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Divider } from "@mui/material";
 import React from "react";
 import BungalowIcon from '@mui/icons-material/Bungalow';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -6,8 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 //import Link from "next/link";
 
 export default function Navbar() {
-    const pages = ['Articles'];
-    const settings = ['Articles'];
+    const pages = [{text: 'Accueil', link: '/'}, {text: 'Articles', link: '/posts'}];
 
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -61,30 +60,33 @@ export default function Navbar() {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Menu
+                        <SwipeableDrawer
                             id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
+                            anchor='left'
                             keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
-                            sx={{
-                                display: { xs: 'block', md: 'none' },
-                            }}
+                            onOpen={handleCloseNavMenu}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Link href="/posts" textAlign="center">{page}</Link>
-                                </MenuItem>
-                            ))}
-                        </Menu>
+                            <Box sx={{ backgroundColor: 'white', height: '100%' }}>
+                                <List>
+                                    {pages.map(({text, link}, index) => (
+                                        <>
+                                            <ListItem key={text}>
+                                                <ListItemButton href={link}>
+                                                    {/* <ListItemIcon>
+                                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                            </ListItemIcon> */}
+                                                    <ListItemText primary={text} />
+                                                </ListItemButton>
+                                            </ListItem>
+                                            <Divider />
+                                        </>
+
+                                    ))}
+                                </List>
+                            </Box>
+                        </SwipeableDrawer>
                     </Box>
                     <BungalowIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
@@ -106,20 +108,20 @@ export default function Navbar() {
                         MDL
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                        {pages.map(({text, link}) => (
                             <Button
-                                key={page}
+                                key={text}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
-                                href="/posts"
+                                href={link}
                             >
-                                {page}
+                                {text}
                             </Button>
                         ))}
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
                         <IconButton aria-label="delete" size="large" href="https://www.instagram.com/mdljulesverne_nantes/">
-                            <InstagramIcon fontSize="large" color="primary"/>
+                            <InstagramIcon fontSize="large" color="primary" />
                         </IconButton>
                     </Box>
                     {/* <Box sx={{ flexGrow: 0 }}>
